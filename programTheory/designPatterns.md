@@ -1,12 +1,19 @@
 # 设计模式
 ## 1、七大设计原则
+
 ## 2、创建型设计模式
+
 ### 2.1、单例模式
+
 #### 2.1.1、作用
+
 #### 2.1.2、使用场景
+
 #### 2.1.3、五种实现方式及优缺点
-* 饿汉式: 线程安全、调用效率高、不能延时加载，类初始化时，立即加载  
-````JAVA
+
+* **饿汉式**：线程安全；调用效率高；不能延时加载，类初始化时，立即加载
+
+```
 public class Singleton1 {
 
     private static Singleton1 INSTANCE = new Singleton1();
@@ -19,9 +26,11 @@ public class Singleton1 {
     }
 
 }
-````
-* 懒汉式: 线程安全、调用效率不高、可以延时加载  
-````JAVA
+```
+
+* **懒汉式**：线程安全；调用效率不高；可以延时加载  
+
+```
 public class Singleton2 {
 
     private static Singleton2 INSTANCE;
@@ -36,8 +45,10 @@ public class Singleton2 {
         return INSTANCE;
     }
 }
-````
-* 双重检查: 由于JVM底层内部模型原因，可能出现问题，需要加volatile修饰符，**避免指令重排序**  
+```
+
+* **双重检查**：由于JVM底层内部模型原因，可能出现问题，需要加volatile修饰符，**避免指令重排序**  
+
 ````JAVA
 public class Singleton3 {
 
@@ -58,7 +69,9 @@ public class Singleton3 {
     }
 }
 ````
-* 静态内部类: 线程安全、调用效率高、可以延时加载  
+
+* **静态内部类**：线程安全；调用效率高；可以延时加载  
+
 ````JAVA
 public class Singleton4 {
 
@@ -74,7 +87,9 @@ public class Singleton4 {
     }
 }
 ````
-* 枚举类: 线程安全、调用效率高、不能延时加载，且**不可以通过反射和反序列化来破解**  
+
+* **枚举类**：线程安全；调用效率高；不能延时加载，且**不可以通过反射和反序列化来破解**  
+
 ````JAVA
 public enum Singleton5 {
 
@@ -83,7 +98,8 @@ public enum Singleton5 {
 ````
 
 #### 2.1.4、破解单例模式
-* 序列化(要求实现序列化接口)
+* **序列化**(要求实现序列化接口)
+
 ````JAVA
 // 破解单例模式
 @Test
@@ -122,7 +138,9 @@ public class Singleton1 implements Serializable {
 
 }
 ````
-* 反射  
+
+* **反射**  
+
 ````JAVA
 // 破解单例模式
 @Test
@@ -150,6 +168,7 @@ public class Singleton1 {
 
 }
 ````
+
 ## 3、结构型设计模式
 ## 4、行为型设计模式
 ## 5、UML
