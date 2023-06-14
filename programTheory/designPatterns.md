@@ -21,7 +21,7 @@ public class Singleton1 {
 }
 ````
 * 懒汉式: 线程安全、调用效率不高、可以延时加载  
-```JAVA
+````JAVA
 public class Singleton2 {
 
     private static Singleton2 INSTANCE;
@@ -36,7 +36,7 @@ public class Singleton2 {
         return INSTANCE;
     }
 }
-```
+````
 * 双重检查: 由于JVM底层内部模型原因，可能出现问题，需要加volatile修饰符，**避免指令重排序**  
 ````JAVA
 public class Singleton3 {
