@@ -6,7 +6,7 @@
 #### 2.1.2、使用场景
 #### 2.1.3、五种实现方式及优缺点
 * 饿汉式: 线程安全、调用效率高、不能延时加载，类初始化时，立即加载  
-````Java
+````JAVA
 public class Singleton1 {
 
     private static Singleton1 INSTANCE = new Singleton1();
@@ -21,7 +21,7 @@ public class Singleton1 {
 }
 ````
 * 懒汉式: 线程安全、调用效率不高、可以延时加载  
-```Java
+```JAVA
 public class Singleton2 {
 
     private static Singleton2 INSTANCE;
