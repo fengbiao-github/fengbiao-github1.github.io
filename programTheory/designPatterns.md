@@ -13,7 +13,7 @@
 
 * **饿汉式**：线程安全；调用效率高；不能延时加载，类初始化时，立即加载
 
-```
+````JAVA
 public class Singleton1 {
 
     private static Singleton1 INSTANCE = new Singleton1();
@@ -26,11 +26,11 @@ public class Singleton1 {
     }
 
 }
-```
+````
 
 * **懒汉式**：线程安全；调用效率不高；可以延时加载  
 
-```
+````JAVA
 public class Singleton2 {
 
     private static Singleton2 INSTANCE;
@@ -45,7 +45,7 @@ public class Singleton2 {
         return INSTANCE;
     }
 }
-```
+````
 
 * **双重检查**：由于JVM底层内部模型原因，可能出现问题，需要加volatile修饰符，**避免指令重排序**  
 
@@ -115,6 +115,7 @@ public void test7() throws Exception {
     System.out.println(singleton12);
     System.out.println(singleton11 == singleton12);
 }
+
 // 解决方案：在单例模式类中，增加反序列化回调方法private Object readResolve() throws ObjectStreamException，返回实例对象
 public class Singleton1 implements Serializable {
 
@@ -151,6 +152,7 @@ public void test6() throws Exception {
     Singleton1 singleton12 = constructor.newInstance(null);
     System.out.println(singleton11 == singleton12);
 }
+
 // 解决方案：在单例模式类的私有构造方法中，判断实例是否为null，如果非null，则抛出异常
 public class Singleton1 {
 
