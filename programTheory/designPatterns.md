@@ -5,8 +5,8 @@
 #### 2.1.1、作用
 #### 2.1.2、使用场景
 #### 2.1.3、五种实现方式及优缺点
-* 饿汉式: 线程安全、调用效率高、不能延时加载(类初始化时，立即加载)  
-```Java
+* 饿汉式: 线程安全、调用效率高、不能延时加载，类初始化时，立即加载  
+````Java
 public class Singleton1 {
 
     private static Singleton1 INSTANCE = new Singleton1();
@@ -19,7 +19,7 @@ public class Singleton1 {
     }
 
 }
-```
+````
 * 懒汉式: 线程安全、调用效率不高、可以延时加载  
 ```Java
 public class Singleton2 {
@@ -38,7 +38,7 @@ public class Singleton2 {
 }
 ```
 * 双重检查: 由于JVM底层内部模型原因，可能出现问题，需要加volatile修饰符，**避免指令重排序**  
-```Java
+````JAVA
 public class Singleton3 {
 
     private static volatile Singleton3 INSTANCE; // 防止指令重排
@@ -57,9 +57,9 @@ public class Singleton3 {
         return INSTANCE;
     }
 }
-```
+````
 * 静态内部类: 线程安全、调用效率高、可以延时加载  
-```JAVA
+````JAVA
 public class Singleton4 {
 
     private Singleton4() {
@@ -73,7 +73,7 @@ public class Singleton4 {
         return Inner.INSTANCE;
     }
 }
-```
+````
 * 枚举类: 线程安全、调用效率高、不能延时加载，且**不可以通过反射和反序列化来破解**  
 ````JAVA
 public enum Singleton5 {
