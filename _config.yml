@@ -6,4 +6,4 @@ plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 title: [架构师修炼之路]
 description: [拿青春作赌注, 怎么舍得让自己输]
-show_downloads: [true]
+show_downloads: [false]
